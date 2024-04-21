@@ -1,0 +1,4 @@
+from math import*
+S,t3,a,y=4,1,(s-4*t3),S/t3
+r=(9*pow(cos(a),3)+4*y)/(2+3*y)
+print(r)
