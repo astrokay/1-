@@ -1,0 +1,18 @@
+import numpy as np 
+import matplotlib.pyplot as plt 
+ x = np.array([3,9,11,13,14,14,8,5,7,12,2,1])  
+ y = np.array([3,8,10,12,13,14,9,6,7,11,1,1]) 
+ A = np.vstack([x, np.ones(len(x))]).T 
+ m, b = np.linalg.lstsq(A, y, rcond=None)[0] 
+ print("Уравнение оптимальной прямой: y = {:.3f}x + {:.3f}".format(m, b)) 
+ line_eq = "Уравнение прямой: y = {:.3f}x + {:.3f}".format(m, b) 
+ plt.figure(figsize=(8, 6)) 
+ plt.scatter(x, y, color='red', label='Точки')   
+ plt.plot(x, m*x + b, color='blue', label='Прямая')  
+ plt.title('Оптимальная прямая методом наименьших квадратов') 
+ plt.xlabel('x') 
+ plt.ylabel('y') 
+ plt.grid(True) 
+ plt.legend() 
+ plt.text(0.5, 0.5, line_eq, fontsize=12, transform=plt.gca().transAxes) 
+ plt.show()
