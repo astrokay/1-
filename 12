@@ -1,0 +1,22 @@
+port math 
+S = 8 
+G = 7 
+S = S/10 
+G = G/10 
+a0 = -S * (G**2 + S**2) 
+a1 = (G + S)**2 
+a2 = -(2*G - S) 
+a3 = 1  
+def f(x): 
+return a0 + a1*x + a2*x**2 + a3*x**3 
+def df(x): 
+return a1 + 2*a2*x + 3*a3*x**2 
+def newtons_method(f, df, x0, tolerance=0.001): 
+while True: 
+x1 = x0 - f(x0) / df(x0) 
+if abs(x1 - x0) < tolerance: 
+return x1 
+x0 = x1 
+x0 = 1.5  
+root = newtons_method(f, df, x0) 
+ print("Корень полинома на интервале [0,3]: {root:.3f}")
