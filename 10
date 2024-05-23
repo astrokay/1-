@@ -1,0 +1,19 @@
+import numpy as np
+G = 7
+S = 21
+p = 2*(G + S)
+m = -p + S
+A = np.array([[p, m, 2*S],[m, 2*p + S, m],[2*S, m, p]]) / 6
+eigenvalues, eigenvectors = np.linalg.eig(A)
+max_eigenvalue_index = np.argmax(np.abs(eigenvalues))
+max_eigenvalue = eigenvalues[max_eigenvalue_index]
+max_eigenvector = eigenvectors[:, max_eigenvalue_index]
+
+print("Собственные значения матрицы A:")
+print(eigenvalues)
+print("\nСобственные векторы матрицы A:")
+print(eigenvectors)
+print("\nМаксимальное по модулю собственное значение:")
+print(max_eigenvalue)
+print("\nСоответствующий ему собственный вектор:")
+print(max_eigenvector)
