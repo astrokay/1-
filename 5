@@ -1,0 +1,12 @@
+x_values=[0.1,0.3,0.4,0.7,1.0]
+def u(k,x):
+return((-1)**k*x**k/((2*k-1)(2*k+1)))
+print('--------------------------')
+print('| Значение x | Значение S |')
+for x in x_values:
+total_sum=0
+for k in range(1,4):
+total_sum += k*u(k,x
+print('-------------------------------')
+print(f'K={k}')
+print(f'X={x} | Сумма = {total_sum}')
